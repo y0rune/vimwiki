@@ -1051,7 +1051,7 @@ function! s:process_tag_para(line, para) abort
     endif
     let processed = 1
     if vimwiki#vars#get_global('text_ignore_newline')
-      call add(lines, a:line)
+      call add(lines, a:line.'<br />')
     else
       call add(lines, a:line.'<br />')
     endif
@@ -1741,4 +1741,3 @@ endfunction
 function! vimwiki#html#CatUrl(wikifile) abort
   execute '!echo file://'.s:get_wikifile_url(a:wikifile)
 endfunction
-
